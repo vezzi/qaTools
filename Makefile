@@ -3,7 +3,7 @@ CC=g++
 # Flags for the compiles
 CFLAGS=-c -Wall -g
 # Samtools path
-SAMTOOLS=/home/pcostea/private/tools/samtools-0.1.8/
+SAMTOOLS=/proj/g2013206/assemblyValidation/tools/FRCbam/src/samtools
 INCLUDE=include/
 
 all: removeUnmapped qaCompute computeInsertSizeHistogram doBWAQualTrimming

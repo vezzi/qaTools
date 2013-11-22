@@ -474,7 +474,7 @@ int main(int argc, char *argv[])
     fprintf(stdout,"\nDuplicates:%u \n", duplicates);
 
     //Print header for next table in output file
-    fprintf(outputFile,"\nCov*X\tPercentage\tNr. of bases\n");
+    //fprintf(outputFile,"\nCov*X\tPercentage\tNr. of bases\n");
 
     fprintf(stdout,"Total genome lenght %lu \n", totalGenomeLength);
     //Compute procentages of genome cover!.
@@ -488,26 +488,26 @@ int main(int argc, char *argv[])
 	//All that has been covered i, had been covered i+1, i+2 and so on times. Thus, do this addition
 	for (int x = i; x<=userOpt.maxCoverage; ++x) coverage += coverageHist[x];
 	fprintf(stdout,"%3.2f of genome has been covered at least %dX \n", (double)(coverage)/totalGenomeLength*100, i);
-	fprintf(outputFile,"%d\t%3.5f\t%lu\n",i, (double)(coverage)/totalGenomeLength*100, coverage);
+	//fprintf(outputFile,"%d\t%3.5f\t%lu\n",i, (double)(coverage)/totalGenomeLength*100, coverage);
       }
 
     }
 
-    fprintf(outputFile,"\nOther\n");
+    //fprintf(outputFile,"\nOther\n");
 
     //Printout procentage of mapped/unmapped reads                                                                                                     
     double procentageOfUnmapped = 100*((double)unmappedReads/totalNumberOfReads);
     double procentageOfZeroQuality = 100*((double)zeroQualityReads/totalNumberOfReads);
-    fprintf(outputFile,"Total number of reads: %u\n", totalNumberOfReads);
-    fprintf(outputFile,"Total number of duplicates found and ignored: %u\n", duplicates);
-    fprintf(outputFile,"Percentage of unmapped reads: %3.5f\n", procentageOfUnmapped);
-    fprintf(outputFile,"Percentage of sub-par quality mappings: %3.5f\n", procentageOfZeroQuality);
+    //fprintf(outputFile,"Total number of reads: %u\n", totalNumberOfReads);
+    //fprintf(outputFile,"Total number of duplicates found and ignored: %u\n", duplicates);
+    //fprintf(outputFile,"Percentage of unmapped reads: %3.5f\n", procentageOfUnmapped);
+    //fprintf(outputFile,"Percentage of sub-par quality mappings: %3.5f\n", procentageOfZeroQuality);
     int32_t nrOfPaires = totalNumberOfReads/2;
     double procOfProperPaires = (double)(100*(double)totalProperPaires/2)/nrOfPaires;
-    fprintf(outputFile,"Number of proper paired reads: %u\n", totalProperPaires);
-    fprintf(outputFile,"Percentage of proper pairs: %3.5f\n", procOfProperPaires);
+    //fprintf(outputFile,"Number of proper paired reads: %u\n", totalProperPaires);
+    //fprintf(outputFile,"Percentage of proper pairs: %3.5f\n", procOfProperPaires);
     if (userOpt.spanCov) {
-      fprintf(outputFile, "Number of interchromosomal pairs: %u\n",interChr);
+     // fprintf(outputFile, "Number of interchromosomal pairs: %u\n",interChr);
     }
 
     printf("Out of %u reads, you have %3.5f unmapped reads\n and %3.5f sub-par quality mappings\n", totalNumberOfReads ,procentageOfUnmapped, procentageOfZeroQuality);
