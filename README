@@ -2,11 +2,9 @@ A couple of useful qa tools for sequencing data.
 
 I. Setup:
 
-   Change Makefile $SAMTOOLS path to your samtools instalation path.
+   Use `make SAMTOOLS=PATH/TO/SAMTOOLS`
    If you don't have samtools, you can find it here:
       http://samtools.sourceforge.net/
-
-   Just run make and you should be done!
 
 II. Tools:
 
