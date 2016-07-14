@@ -7,13 +7,13 @@ INCLUDE=include/
 all: removeUnmapped qaCompute computeInsertSizeHistogram doBWAQualTrimming
 
 removeUnmapped: removeUnmapped.o
-	$(CC) removeUnmapped.o -o removeUnmapped -L$(SAMTOOLS) -lbam -lz
+	$(CC) removeUnmapped.o -o removeUnmapped -L$(SAMTOOLS) -L$(SAMTOOLS)/htslib-$(VERSION) -lhts -lbam -lz
 
 qaCompute: qaCompute.o
-	$(CC) qaCompute.o -o qaCompute -L$(SAMTOOLS) -lbam -lz #-lefence
+	$(CC) qaCompute.o -o qaCompute -L$(SAMTOOLS) -lbam -L$(SAMTOOLS)/htslib-$(VERSION) -lhts -lz #-lefence
 
 computeInsertSizeHistogram: computeInsertSizeHistogram.o
-	$(CC) computeInsertSizeHistogram.o -o computeInsertSizeHistogram -lz -L$(SAMTOOLS) -lbam #-fopenmp
+	$(CC) computeInsertSizeHistogram.o -o computeInsertSizeHistogram -lz -L$(SAMTOOLS) -lbam -L$(SAMTOOLS)/htslib-$(VERSION) -lhts  #-fopenmp
 
 doBWAQualTrimming: doBWAQualTrimming.o
 	$(CC) doBWAQualTrimming.o -o doBWAQualTrimming -lz
