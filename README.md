@@ -3,8 +3,9 @@ A couple of useful qa tools for sequencing data.
 I. Setup:
 
    Use `make SAMTOOLS=/PATH/TO/SAMTOOLS/SOURCE VERSION=SAMTOOLS_VERSION`
-   If you don't have samtools, download version 1.3 here:
-   https://sourceforge.net/projects/samtools/files/samtools/1.3/samtools-1.3.tar.bz2/download
+   If you don't have samtools, download it from here (and run make):
+                http://samtools.sourceforge.net
+   Any version should work. However, 1.3 is verified to do such.
 
 II. Tools:
 
