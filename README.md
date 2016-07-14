@@ -2,7 +2,7 @@ A couple of useful qa tools for sequencing data.
 
 I. Setup:
 
-   Use `make SAMTOOLS=/PATH/TO/SAMTOOLS VERSION=SAMTOOLS_VERSION`
+   Use `make SAMTOOLS=/PATH/TO/SAMTOOLS/SOURCE VERSION=SAMTOOLS_VERSION`
    If you don't have samtools, you can find it here:
       http://samtools.sourceforge.net/
 
